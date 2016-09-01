@@ -56,7 +56,7 @@ def generate_timeline(obj_type, obj_id, user):
     for campaign in main_obj.campaign:
         name = campaign.name
         confidence = campaign.confidence
-        description = campaign.description
+        description = campaign.description or ""
         rev = reverse('crits.campaigns.views.campaign_details', args=[name,])
         link = '<a href="%s">%s</a>' % (cgi.escape(rev), cgi.escape(name))
         i = "Campaign <b>%s</b> added with a confidence of <b>%s</b> and a \
